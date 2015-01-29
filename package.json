@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "activationEvents": [],
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Lint CoffeeScript on the fly, using coffeelint",
   "repository": "https://github.com/claydotio/linter-clay-coffeelint.git",
   "license": "MIT",
