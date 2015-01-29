@@ -29,24 +29,26 @@ class LinterCoffeelint extends Linter
   constructor: (editor) ->
     super(editor)
 
-    atom.config.observe 'linter-coffeelint.coffeelintConfigPath', =>
-      @configPath = atom.config.get 'linter-coffeelint.coffeelintConfigPath'
+    atom.config.observe 'linter-clay-coffeelint.coffeelintConfigPath', =>
+      @configPath = atom.config.get 'linter-clay-coffeelint.coffeelintConfigPath'
 
     if configPathLocal = findFile(@cwd, ['coffeelint.json'])
       @cmd += " -f #{configPathLocal}"
     else if @configPath
       @cmd += " -f #{@configPath}"
     else
-      @cmd += " -f #{path.join(atom.packages.resolvePackagePath('linter-coffeelint'), 'node_modules/clay-coffeescript-style-guide/coffeelint.json')}"
+      selfPath = atom.packages.resolvePackagePath('linter-clay-coffeelint')
+      configPath = 'node_modules/clay-coffeescript-style-guide/coffeelint.json'
+      @cmd += " -f #{path.join(selfPath, configPath)}"
 
-    atom.config.observe 'linter-coffeelint.coffeelintExecutablePath', =>
-      @executablePath = atom.config.get 'linter-coffeelint.coffeelintExecutablePath'
+    atom.config.observe 'linter-clay-coffeelint.coffeelintExecutablePath', =>
+      @executablePath = atom.config.get 'linter-clay-coffeelint.coffeelintExecutablePath'
 
     if editor.getGrammar().scopeName is 'source.litcoffee'
       @cmd += ' --literate'
 
   destroy: ->
-    atom.config.unobserve 'linter-coffeelint.coffeelintExecutablePath'
-    atom.config.unobserve 'linter-coffeelint.coffeelintConfigPath'
+    atom.config.unobserve 'linter-clay-coffeelint.coffeelintExecutablePath'
+    atom.config.unobserve 'linter-clay-coffeelint.coffeelintConfigPath'
 
 module.exports = LinterCoffeelint
