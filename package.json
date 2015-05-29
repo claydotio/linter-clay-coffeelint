@@ -1,6 +1,6 @@
 {
   "name": "linter-clay-coffeelint",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "./lib/init",
   "linter-package": true,
   "activationEvents": [],
