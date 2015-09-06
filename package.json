@@ -2,7 +2,7 @@
   "name": "linter-clay-coffeelint",
   "main": "./lib/init",
   "activationCommands": {},
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lint CoffeeScript on the fly, using coffeelint",
   "repository": "https://github.com/claydotio/linter-clay-coffeelint.git",
   "license": "MIT",
