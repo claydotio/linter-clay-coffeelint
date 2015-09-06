@@ -1,10 +1,10 @@
 {
-  "name": "linter-coffeelint",
+  "name": "linter-clay-coffeelint",
   "main": "./lib/init",
   "activationCommands": {},
   "version": "1.0.3",
   "description": "Lint CoffeeScript on the fly, using coffeelint",
-  "repository": "https://github.com/AtomLinter/linter-coffeelint.git",
+  "repository": "https://github.com/claydotio/linter-clay-coffeelint.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
