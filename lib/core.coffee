@@ -1,8 +1,6 @@
 # I can't just map over parseInt because it needs the 2nd parameter and map
 # passes the current index as the 2nd parameter
 toInt = (str) -> parseInt(str, 10)
-resolve = require 'resolve'
-path = require 'path'
 
 module.exports =
 
@@ -20,7 +18,7 @@ module.exports =
 
   _resolveCoffeeLint: (filePath) ->
     try
-      return path.dirname(resolve.sync('coffeelint/package.json', {
+      return path.dirname(resolve('coffeelint/package.json', {
         basedir: path.dirname(filePath)
       }))
     return 'coffeelint'
